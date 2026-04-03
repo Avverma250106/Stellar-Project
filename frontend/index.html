@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SubsRemi - Subscription Dashboard</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/@stellar/stellar-sdk/dist/stellar-sdk.min.js"></script>
+  </head>
+  <body>
+    <main class="container">
+      <header class="dashboard-header">
+        <h1>SubsRemi</h1>
+        <p class="subtitle">Manage and pay your active subscriptions.</p>
+      </header>
+
+      <section class="card">
+        <h2>Add New Subscription</h2>
+        <div class="add-form">
+          <div class="field">
+            <label for="serviceName">Service Name</label>
+            <input id="serviceName" type="text" placeholder="e.g. Netflix, Spotify" />
+          </div>
+          <div class="field">
+            <label for="serviceAmount">Amount (XLM)</label>
+            <input id="serviceAmount" type="number" step="0.1" value="10" />
+          </div>
+          <button id="addServiceButton" class="primary">Add Subscription</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Your Subscriptions</h2>
+        <ul id="subsList" class="subs-list">
+          <!-- Subscriptions will be injected here -->
+        </ul>
+      </section>
+
+      <div id="statusMessage" class="status-wrap"></div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
